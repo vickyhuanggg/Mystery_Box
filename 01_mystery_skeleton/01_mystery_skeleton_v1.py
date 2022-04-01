@@ -24,24 +24,31 @@ class Start:
                                       command=lambda: self.to_game(1))
         self.lowstakes_button.grid(row=2, pady=10)
 
-        def to_game(self, stakes):
-            starting_balance = self.start_amount_entry.get()
-            Game(self, stakes, starting_balance)
+    def to_game(self, stakes):
+        starting_balance = self.start_amount_entry.get()
+        Game(self, stakes, starting_balance)
 
 class Game:
     def __init__(self, partner, stakes, starting_balance):
         print(stakes)
         print(starting_balance)
 
+        # disable low stakes button
         partner.lowstakes_button.config(state=DISABLED)
+
+        # initialise variables
+        self.balance = IntVar()
+
+        # Set starting balance to amount entered by user at start of game
+        self.balance.set(starting_balance)
 
 
 # main routine
 if __name__ == "__main__":
     root = Tk()
     root.title("Mystery Box Game!!")
-    something = Start()
-    
+    something = Start(root)
+
     root.mainloop()
 
 
