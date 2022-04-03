@@ -149,6 +149,7 @@ class Game:
         print(starting_balance)
 
 
+
         # initialise variables
         self.balance = IntVar()
 
@@ -164,6 +165,14 @@ class Game:
         self.heading_label = Label(self.game_frame, text="Heading",
                                    font="Arial 24 bold", padx=10, pady=10)
         self.heading_label.grid(row=0)
+
+        # balance
+        self.balance_label = Label(self.game_frame, text="")
+        self.balance_label.grid(row=1)
+
+        self.gain_button = Button(self.game_frame, text="Gain",
+                                  command=partial(self.reveal_boxes))
+        self.gain_button.grid(row=2)
 
     def reveal_boxes(self):
         # retrieve the balance from the initial function
