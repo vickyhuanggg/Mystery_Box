@@ -110,7 +110,7 @@ class Game:
 
         round_winnings = 0
         prizes = []
-        for thing in range(0,3):
+        for item in range(0,3):
 
             # randint finds numbers between given endpoints, including both endpoints
             prize_num = random.randint(1,100)
