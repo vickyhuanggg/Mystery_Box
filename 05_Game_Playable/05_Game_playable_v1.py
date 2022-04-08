@@ -120,10 +120,10 @@ class Game:
                 round_winnings += 5 * stakes_multiplier
             elif 5 < prize_num <= 25:
                 prize = "silver\n(${})".format(2*stakes_multiplier)
-                round_winnings += 2
+                round_winnings += 2 * stakes_multiplier
             elif 25 < prize_num <= 65:
                 prize = "copper\n(${})".format(1*stakes_multiplier)
-                round_winnings += 1
+                round_winnings += stakes_multiplier
             else:
                 prize = "lead\n($0)"
 
