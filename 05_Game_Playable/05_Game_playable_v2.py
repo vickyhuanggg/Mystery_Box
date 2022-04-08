@@ -21,7 +21,7 @@ class Start:
 
         Game(self, stakes, starting_balance)
         # hide start up window
-        self.start_frame.destory()
+        self.start_frame.destroy()
 
 class Game:
     def __init__(self, partner, stakes, starting_balance):
@@ -136,11 +136,11 @@ class Game:
             elif 5 < prize_num <= 25:
                 prize = "silver\n(${})".format(2*stakes_multiplier)
                 back_color = "#B7B7B5"    # silver colour
-                round_winnings += 2
+                round_winnings += 2 * stakes_multiplier
             elif 25 < prize_num <= 65:
                 prize = "copper\n(${})".format(1*stakes_multiplier)
                 back_color = "#BC7f61"    # copper colour
-                round_winnings += 1
+                round_winnings += stakes_multiplier
             else:
                 prize = "lead\n($0)"
                 back_color = "#595E71"    # lead colour
