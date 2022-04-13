@@ -19,8 +19,7 @@ class Game:
 
         # Heading Row
         self.heading_label =Label(self.game_frame, text="Play...",
-                                  font="Arial 24 bold", padx=10, pady=10,
-                                   command=self.to_help)
+                                  font="Arial 24 bold", padx=10, pady=10)
         self.heading_label.grid(row=0)
 
         # History Button (row 1)
