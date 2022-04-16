@@ -13,7 +13,7 @@ class Start:
         # Mystery Heading (row 0)
         self.mystery_box_label = Label(self.start_frame, text="Mystery Box Game",
                                        font="Arial 19 bold")
-        self.mystery_box_label.grid(row=1)
+        self.mystery_box_label.grid(row=0)
 
              # Initial Instructions (row 1)
         self.mystery_instructions = Label(self.start_frame, font="Arial 10 italic",
@@ -25,9 +25,16 @@ class Start:
                                           padx=10, pady=10)
         self.mystery_instructions.grid(row=1)
 
+        self.entry_error_frame = Frame(self.start_frame, width=200)
+        self.entry_error_frame.grid(row=2)
+
         # Entry box (row 2)
-        self.start_amount_entry = Entry(self.start_frame, font="Arial 16 bold")
-        self.start_amount_entry.grid(row=2)
+        self.start_amount_entry = Entry(self.entry_error_frame, font="Arial 16 bold")
+        self.start_amount_entry.grid(row=0)
+
+        self.amount_error_label = Label(self.entry_error_frame, font="Arial 10 bold", fg="#ffafaf",
+                                        wrap=275, justify=LEFT)
+        self.amount_error_label.grid(row=1, columnspan=2, pady=5)
 
         # button frame (row 3)
         self.stakes_frame = Frame(self.start_frame)
@@ -78,7 +85,7 @@ class Start:
                 has_errors = "yes"
                 error_feedback = "Sorry, the least you " \
                                  "can play with is $5"
-            elif starting_balance > 5:
+            elif starting_balance > 50:
                 has_errors = "yes"
                 error_feedback = "Too high! The most you can risk in "\
                                  "this game is $50"
@@ -110,7 +117,6 @@ class Game:
     def __init__(self, partner, stakes, starting_balance):
         print(stakes)
         print(starting_balance)
-
 
 
 
