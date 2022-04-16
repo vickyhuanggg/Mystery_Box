@@ -17,7 +17,7 @@ class Start:
         # Mystery Heading (row 0)
         self.mystery_box_label = Label(self.start_frame, text="Mystery Box Game",
                                        font="Arial 19 bold")
-        self.mystery_box_label.grid(row=1)
+        self.mystery_box_label.grid(row=0)
 
              # Initial Instructions (row 1)
         self.mystery_instructions = Label(self.start_frame, font="Arial 10 italic",
@@ -75,10 +75,6 @@ class Start:
         self.medium_stakes_button.config(state=DISABLED)
         self.high_stakes_button.config(state=DISABLED)
 
-        # Help Button
-        self.help_button = Button(self.start_frame, text="How to Play",
-                                  bg="#808080", fg="black", font=button_font)
-        self.help_button.grid(row=4, pady=10)
 
 
 
