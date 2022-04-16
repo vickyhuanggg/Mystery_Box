@@ -13,7 +13,7 @@ class Start:
         # Mystery Heading (row 0)
         self.mystery_box_label = Label(self.start_frame, text="Mystery Box Game",
                                        font="Arial 19 bold")
-        self.mystery_box_label.grid(row=1)
+        self.mystery_box_label.grid(row=0)
 
              # Initial Instructions (row 1)
         self.mystery_instructions = Label(self.start_frame, font="Arial 10 italic",
@@ -36,22 +36,22 @@ class Start:
         # buttons go here...
         button_font = "Arial 12 bold"
         # Orange low stakes button...
-        self.lowstakes_button = Button(self.stakes_frame, text="Low ($5)",
+        self.low_stakes_button = Button(self.stakes_frame, text="Low ($5)",
                                       command=lambda: self.to_game(1),
                                        font=button_font, bg="#FF9933")
-        self.lowstakes_button.grid(row=0, column=0, pady=10)
+        self.low_stakes_button.grid(row=0, column=0, pady=10)
 
         # Yellow medium stakes button...
-        self.lowstakes_button = Button(self.stakes_frame, text="Medium ($10)",
+        self.medium_stakes_button = Button(self.stakes_frame, text="Medium ($10)",
                                        command=lambda: self.to_game(2),
                                        font=button_font, bg="#FFFF33")
-        self.lowstakes_button.grid(row=0, column=1, padx=5, pady=10)
+        self.medium_stakes_button.grid(row=0, column=1, padx=5, pady=10)
 
         # Green medium stakes button...
-        self.lowstakes_button = Button(self.stakes_frame, text="High ($15)",
+        self.high_stakes_button = Button(self.stakes_frame, text="High ($15)",
                                        command=lambda: self.to_game(3),
                                        font=button_font, bg="#FFFF33")
-        self.lowstakes_button.grid(row=0, column=2, padx=5, pady=10)
+        self.high_stakes_button.grid(row=0, column=2, padx=5, pady=10)
 
         # Help Button
         self.help_button = Button(self.start_frame, text="How to Play",
@@ -70,7 +70,7 @@ class Game:
         print(starting_balance)
 
         # disable low stakes button
-        partner.lowstakes_button.config(state=DISABLED)
+        partner.low_stakes_button.config(state=DISABLED)
 
         # initialise variables
         self.balance = IntVar()
