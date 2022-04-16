@@ -17,7 +17,7 @@ class Start:
         # Mystery Heading (row 0)
         self.mystery_box_label = Label(self.start_frame, text="Mystery Box Game",
                                        font="Arial 19 bold")
-        self.mystery_box_label.grid(row=1)
+        self.mystery_box_label.grid(row=0)
 
              # Initial Instructions (row 1)
         self.mystery_instructions = Label(self.start_frame, font="Arial 10 italic",
@@ -148,7 +148,7 @@ class Game:
         print(starting_balance)
 
         # disable low stakes button
-        partner.lowstakes_button.config(state=DISABLED)
+        partner.low_stakes_button.config(state=DISABLED)
 
         # initialise variables
         self.balance = IntVar()
